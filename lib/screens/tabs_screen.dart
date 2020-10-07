@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_meal_app/widgets/main_drawer.dart';
 import './categories_screen.dart';
 import './favorites_screen.dart';
 
@@ -12,6 +13,7 @@ class _TabsScreenState extends State<TabsScreen> {
     {'page': CategoriesScreen(), 'title': 'Categories'},
     {'page': FavoritesScreen(), 'title': 'Favorites'}
   ];
+  
   int _selectedPageIndex = 0;
 
   void _selectPage(int index) {
@@ -26,7 +28,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title']),
       ),
-      drawer: Drawer(child: Text('the drawer'),),
+      drawer: MainDrawer(), //aqui se quedo el tuto
       body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
